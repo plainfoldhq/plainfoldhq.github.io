@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://plainfoldhq.github.io/sitemap.xml
