@@ -28,3 +28,26 @@ jobs:
           path: .
       - id: deployment
         uses: actions/deploy-pages@v4
+  indexnow:
+    # Tell IndexNow search engines (Bing, Yandex, Seznam, Naver...) which pages exist after each deploy.
+    # The key is public by design: it must match the file /<key>.txt on this site. No secrets used.
+    needs: deploy
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Submit sitemap URLs
+        run: |
+          KEY=$(ls *.txt | grep -E '^[0-9a-f]{32}\.txt$' | head -1 | sed 's/\.txt$//')
+          [ -n "$KEY" ] || { echo "no IndexNow key file"; exit 0; }
+          python3 - "$KEY" > body.json <<'PY'
+          import json, re, sys
+          urls = re.findall(r"<loc>([^<]+)</loc>", open("sitemap.xml").read())
+          print(json.dumps({"host": "plainfoldhq.github.io", "key": sys.argv[1],
+                            "keyLocation": f"https://plainfoldhq.github.io/{sys.argv[1]}.txt", "urlList": urls[:10000]}))
+          PY
+          sleep 60  # let Pages serve the new key file first
+          curl -sS -o /dev/null -w "IndexNow HTTP %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json; charset=utf-8" --data @body.json
