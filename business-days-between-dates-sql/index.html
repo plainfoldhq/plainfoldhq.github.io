@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Business days between two dates in SQL (PostgreSQL, DuckDB)</title><meta name="description" content="Count business days between two dates in SQL with a holiday table: tested PostgreSQL and DuckDB queries, a calendar-table pattern and adding business days to a date.">
+<link rel="canonical" href="https://plainfoldhq.github.io/business-days-between-dates-sql/"><style>body{font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1d2329;background:#fff}
+main,header,footer{max-width:860px;margin:0 auto;padding:0 16px}header{border-bottom:1px solid #dde2e6;padding-top:12px;padding-bottom:12px}
+header a{color:#1d2329;text-decoration:none;font-weight:600}nav a{margin-right:14px;font-weight:400;font-size:15px}
+h1{font-size:1.7em;line-height:1.25;margin:24px 0 8px}h2{font-size:1.25em;margin:28px 0 8px}a{color:#0b5cad}
+table{border-collapse:collapse;width:100%;margin:8px 0 16px;font-size:15px}th,td{text-align:left;padding:6px 8px;border-bottom:1px solid #e4e8eb;vertical-align:top}
+th{background:#f4f6f8}td.n,th.n{text-align:right}.wrap{overflow-x:auto}.note{color:#4a545e;font-size:14px}
+.box{border:1px solid #cfd6dc;border-radius:6px;padding:12px 14px;margin:28px 0;background:#f8fafb;font-size:15px}
+.box p{margin:4px 0}footer{border-top:1px solid #dde2e6;margin-top:32px;padding-top:12px;padding-bottom:24px;color:#4a545e;font-size:14px}
+@media (prefers-color-scheme:dark){body{background:#14181c;color:#e3e7ea}header a{color:#e3e7ea}a{color:#7fb6ee}th{background:#1f252b}
+th,td{border-color:#2c343b}.box{background:#1a2026;border-color:#33404a}.note,footer{color:#a3adb6}header,footer{border-color:#2c343b}}</style></head>
+<body><header><a href="/">Plainfold calendar reference</a>
+<nav><a href="/us-federal-holidays/">Federal holidays</a><a href="/nyse-holidays/">NYSE</a><a href="/federal-reserve-holidays/">Fed</a><a href="/business-days/">Business days</a><a href="/retail-calendar-4-5-4/">4-5-4</a><a href="/dst-dates/">DST</a><a href="/week-numbers/">Week numbers</a><a href="/stock-market-holidays/">World markets</a></nav></header>
+<main><h1>Business days between two dates in SQL</h1>
+<p>Counting business days between two dates in SQL needs two things: a weekday test and a holiday table. The queries below count the business days <em>d</em> with start &le; <em>d</em> &lt; end (the start counts, the end does not, like numpy's busday_count; Excel's NETWORKDAYS counts both ends). Each was run on PostgreSQL 16 and DuckDB and compared with numpy: the on-the-fly count on random 2026 date ranges (2,000 on DuckDB, 300 on PostgreSQL), the other queries on the examples shown.</p><h2>1. A holiday table</h2><pre><code>-- A holiday table (one row per weekday closure). Load yours, or the free CSVs linked below.
+CREATE TABLE holidays (holiday_date date PRIMARY KEY, name text);
+INSERT INTO holidays VALUES
+  (&#x27;2026-01-01&#x27;, &#x27;New Year&#x27;&#x27;s Day&#x27;), (&#x27;2026-01-19&#x27;, &#x27;Martin Luther King Jr. Day&#x27;),
+  (&#x27;2026-02-16&#x27;, &#x27;Washington&#x27;&#x27;s Birthday&#x27;), (&#x27;2026-05-25&#x27;, &#x27;Memorial Day&#x27;),
+  (&#x27;2026-06-19&#x27;, &#x27;Juneteenth&#x27;), (&#x27;2026-09-07&#x27;, &#x27;Labor Day&#x27;), (&#x27;2026-10-12&#x27;, &#x27;Columbus Day&#x27;), (&#x27;2026-11-11&#x27;, &#x27;Veterans Day&#x27;),
+  (&#x27;2026-11-26&#x27;, &#x27;Thanksgiving Day&#x27;), (&#x27;2026-12-25&#x27;, &#x27;Christmas Day&#x27;);</code></pre><p>This example uses the 2026 Federal Reserve (US bank) holidays: a Saturday holiday such as July 4, 2026 is observed by federal offices on Friday July 3, but the Federal Reserve stays open that Friday, so check which calendar you need. For the NYSE, add Good Friday and July 3, 2026 (the exchange closes the Friday before a Saturday holiday) and drop Columbus Day and Veterans Day.</p><h2>2. Count on the fly</h2><pre><code>-- PostgreSQL: business days d with start_date &lt;= d &lt; end_date
+SELECT count(*) AS business_days
+FROM generate_series(DATE &#x27;2026-11-20&#x27;, DATE &#x27;2026-12-31&#x27; - 1, INTERVAL &#x27;1 day&#x27;) AS g(d)
+WHERE extract(isodow FROM g.d) &lt; 6
+  AND NOT EXISTS (SELECT 1 FROM holidays h WHERE h.holiday_date = g.d::date);  -- g.d is a timestamp: cast
+</code></pre><pre><code>-- DuckDB: same count (range() excludes the end date)
+SELECT count(*) AS business_days
+FROM range(DATE &#x27;2026-11-20&#x27;, DATE &#x27;2026-12-31&#x27;, INTERVAL 1 DAY) AS g(d)
+WHERE isodow(g.d) &lt; 6
+  AND NOT EXISTS (SELECT 1 FROM holidays h WHERE h.holiday_date = CAST(g.d AS DATE));</code></pre><p>Both return 27: November 20 to December 30, 2026, minus weekends, Thanksgiving and Christmas.</p><h2>3. Precompute a calendar table</h2><pre><code>-- PostgreSQL and DuckDB: precompute a calendar table once (cover every date you will query)
+CREATE TABLE business_days AS
+SELECT d::date AS calendar_date,
+       CASE WHEN extract(isodow FROM d) &lt; 6
+             AND NOT EXISTS (SELECT 1 FROM holidays h WHERE h.holiday_date = d::date)
+            THEN 1 ELSE 0 END AS is_business_day
+FROM generate_series(DATE &#x27;2026-01-01&#x27;, DATE &#x27;2027-12-31&#x27;, INTERVAL &#x27;1 day&#x27;) AS g(d);
+
+SELECT sum(is_business_day) AS business_days
+FROM business_days
+WHERE calendar_date &gt;= DATE &#x27;2026-11-20&#x27; AND calendar_date &lt; DATE &#x27;2026-12-31&#x27;;</code></pre><p>To count for every row of a large table, store a running business-day number per date and subtract (join your table to it once on the start date and once on the end date):</p><pre><code>-- Running number: business days before each date, so any count is one subtraction
+CREATE TABLE business_day_numbers AS
+SELECT calendar_date, is_business_day,
+       sum(is_business_day) OVER (ORDER BY calendar_date) - is_business_day AS bd_before
+FROM business_days;
+
+-- business days d with start &lt;= d &lt; end, for every row of a table, without scanning ranges
+SELECT e.bd_before - s.bd_before AS business_days
+FROM business_day_numbers s, business_day_numbers e
+WHERE s.calendar_date = DATE &#x27;2026-11-20&#x27; AND e.calendar_date = DATE &#x27;2026-12-31&#x27;;</code></pre><p>Also 27. A start or end date on a weekend or holiday needs no special case; the count is still the business days in between. If the end is before the start, sections 2 and 3 return 0 and the running-number query returns a negative count.</p><h2>4. Add business days to a date</h2><pre><code>-- Add 10 business days to a date (PostgreSQL and DuckDB; the 10th business day after start)
+SELECT calendar_date AS due_date
+FROM business_days
+WHERE calendar_date &gt; DATE &#x27;2026-11-20&#x27; AND is_business_day = 1
+ORDER BY calendar_date
+OFFSET 9 LIMIT 1;</code></pre><p>Returns 2026-12-07. It returns no row if the calendar table ends too early, so build it a year or two past your last date. In Excel, <code>NETWORKDAYS(start, end - 1, holidays)</code> gives the same counts as these queries when end is after start.</p><p>Other engines need their own date series (a recursive CTE) and weekday function (MySQL <code>DAYOFWEEK</code>, SQL Server <code>DATEPART(weekday)</code>, which depends on DATEFIRST, BigQuery and Snowflake <code>EXTRACT(DAYOFWEEK)</code>); they are not tested here.</p><p>Ready-made holiday tables: free CSVs for <a href="https://github.com/plainfoldhq/us-federal-calendar">US federal, NYSE and Fed holidays</a>, <a href="https://github.com/plainfoldhq/fx-settlement-holidays">currency settlement holidays</a> and <a href="https://github.com/plainfoldhq/stock-exchange-holidays">stock exchanges</a>, and a <a href="https://github.com/plainfoldhq/dbt-business-days">dbt package</a> with <code>business_days_between</code> macros. Python: <code>pip install usbizdays</code>.</p><div class="box"><p>Free: <code>pip install usbizdays</code> (is_business_day, add_business_days for federal, NYSE and Fed calendars) and sample CSV/.ics files at <a href="https://github.com/plainfoldhq/us-federal-calendar">github.com/plainfoldhq/us-federal-calendar</a>.</p><p>Full set ($15): federal holidays 1971-2050, NYSE trading days, closures and early closes and Fed holidays 2000-2050 as CSV, JSON, SQLite and .ics, plus a tested PostgreSQL loader. <a href="https://buy.polar.sh/polar_cl_oW9ytw22HhxLxOnke3W8ibcgTXepc2hYuAEyl1gTqqB">Get the full set</a></p><p>All three data packs (business days, date dimension, time zones): $35. <a href="https://buy.polar.sh/polar_cl_HiUeTqJE1gUqHdb3OlOWb6Jml7pdq8E71O2pA4Y9iQ3">Bundle</a></p><p>Every data pack, yearly: $49/year. <a href="https://buy.polar.sh/polar_cl_xydfuofU72fdp6xSOHFtihAuniUFagYOwR9zf2M03Gl">All-Access</a></p></div>
+</main><footer>Plainfold is an AI-run business; pages generated from tested open data. Built 2026-11-24. Check official sources before legal, payroll or settlement use. <a href="/about/">About and sources</a></footer>
+</body></html>
