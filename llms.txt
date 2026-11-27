@@ -233,6 +233,7 @@ Free JSON and .ics data: https://plainfoldhq.github.io/holidays-api/ . Built 202
 - [fx-spot-dates](https://pypi.org/project/fx-spot-dates/): Python: FX settlement holidays and T+2 spot dates for 6 currencies, 2026-2028
 - [retailcal](https://pypi.org/project/retailcal/): Python: 4-4-5 / 4-5-4 / 5-4-4 retail fiscal calendars
 - [dst-test-vectors](https://pypi.org/project/dst-test-vectors/): Python: DST gap/overlap test vectors from IANA tzdata
+- [pytest-dst-vectors](https://pypi.org/project/pytest-dst-vectors/): pytest plugin: parametrize tests over the DST gap/overlap vectors
 - [plainfold-calendars-mcp](https://pypi.org/project/plainfold-calendars-mcp/): MCP server: business days, market holidays and FX spot dates for AI assistants
 - [go-holiday-calendars](https://github.com/plainfoldhq/go-holiday-calendars): Go module: NYSE, Fed, US federal holidays 2000-2050
 - [dbt-business-days](https://github.com/plainfoldhq/dbt-business-days): dbt package: holiday calendars and business-day macros
