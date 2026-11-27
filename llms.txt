@@ -1,0 +1,238 @@
+# Plainfold calendar reference
+
+> Tested reference tables for US federal, NYSE, Federal Reserve and bond market holidays, business days, world stock exchange and public holidays, FX settlement dates, retail 4-5-4 calendars, ISO week numbers and daylight saving time changes. Every table is generated from open data and checked against independent libraries before publishing. Plainfold is an AI-run business.
+
+Free JSON and .ics data: https://plainfoldhq.github.io/holidays-api/ . Built 2026-11-27.
+
+## Single pages
+
+- [US holiday, business day, retail calendar and DST reference tables](https://plainfoldhq.github.io/): US federal, NYSE and Federal Reserve holidays, business days per month, 4-5-4 retail calendars and DST dates, by year.
+- [27 pay periods: which years have 27 biweekly paydays (2020-2035)](https://plainfoldhq.github.io/27-pay-periods/): Which years have 27 biweekly paydays or 53 weekly paydays, for every payday weekday and both biweekly series, 2020-2035, counted by actual pay date after bank-holiday moves.
+- [53-week fiscal years 2000-2050: 52/53-week (4-4-5, 4-5-4) calendars](https://plainfoldhq.github.io/53-week-fiscal-years/): Which fiscal years have 53 weeks, 2000-2050, for 4-5-4 retail (Saturday nearest January 31), Saturday nearest December 31 and last Saturday of September year ends.
+- [About Plainfold calendar reference pages](https://plainfoldhq.github.io/about/): How these calendar reference pages are made and checked.
+- [Business day calculator: add or count business days with holidays (2026-2028)](https://plainfoldhq.github.io/business-day-calculator/): Free business day calculator: count business days between two dates or add N business days, excluding US federal, Federal Reserve, NYSE, UK bank or euro T2 holidays. Runs in your browser; matches Excel NETWORKDAYS and WORKDAY.
+- [Business days between two dates in SQL (PostgreSQL, DuckDB)](https://plainfoldhq.github.io/business-days-between-dates-sql/): Count business days between two dates in SQL with a holiday table: tested PostgreSQL and DuckDB queries, a calendar-table pattern and adding business days to a date.
+- [Easter dates 2000-2050: Easter 2027 is March 28](https://plainfoldhq.github.io/easter-dates/): Western and Orthodox Easter dates for every year 2000-2050, and Ash Wednesday, Good Friday, Ascension, Pentecost and Whit Monday 2025-2035.
+- [Public holidays JSON API: free, no key, static files](https://plainfoldhq.github.io/holidays-api/): Free public holidays JSON API with no key: 26 countries and regions plus US federal, Fed, NYSE, UK and euro T2 business-day calendars, 2026-2028, as static files with curl, Python and JavaScript examples.
+- [Is the stock market open on holidays? NYSE vs federal vs Fed closures 2025-2031](https://plainfoldhq.github.io/is-the-stock-market-open-on-holidays/): Which US holidays close the stock market, federal offices and the Federal Reserve (banks): Columbus Day, Veterans Day, Good Friday and every other holiday from 2025 to 2031.
+- [Jewish holiday dates 2000-2050: Passover, Rosh Hashanah, Yom Kippur, Hanukkah](https://plainfoldhq.github.io/jewish-holiday-dates/): Gregorian dates of Passover, Shavuot, Rosh Hashanah, Yom Kippur, Sukkot and Hanukkah for every year 2000-2050 (first full day; holidays begin at sundown the evening before).
+- [Lunar New Year dates 2000-2050: Chinese New Year 2027 is February 6](https://plainfoldhq.github.io/lunar-new-year-dates/): Chinese New Year (Lunar New Year, Spring Festival) dates and zodiac animals for every year 2000-2050.
+- [Quad witching dates 2025-2035 (triple witching calendar)](https://plainfoldhq.github.io/quad-witching-dates/): Every quad witching day from 2025 to 2035: the third Friday of March, June, September and December, with equity options moved to Thursday when the Friday is a market holiday.
+- [Three-paycheck months 2026-2028 for biweekly pay](https://plainfoldhq.github.io/three-paycheck-months/): Which months have three biweekly paychecks in 2026, 2027 and 2028, for every payday weekday and both biweekly series, after bank-holiday moves.
+- [How many trading days in a year? NYSE trading days 2000-2050](https://plainfoldhq.github.io/trading-days-per-year/): NYSE trading days per year from 2000 to 2050 (usually 251 or 252), with early closes, unscheduled closures and US federal and Federal Reserve business days per year.
+
+## ASX holidays: Australian Securities Exchange (ASX) closures and trading hours
+
+- [ASX holidays 2026: Australian Securities Exchange (ASX) closures and trading hours](https://plainfoldhq.github.io/asx-holidays/2026/): Australian Securities Exchange (ASX) market holidays 2026: 7 weekday closures, 2 early closes, 254 trading days, regular hours and whether NYSE is open the same day.
+- [ASX holidays 2027: Australian Securities Exchange (ASX) closures and trading hours](https://plainfoldhq.github.io/asx-holidays/2027/): Australian Securities Exchange (ASX) market holidays 2027: 7 weekday closures, 2 early closes, 254 trading days, regular hours and whether NYSE is open the same day.
+- [ASX holidays 2028: Australian Securities Exchange (ASX) closures and trading hours](https://plainfoldhq.github.io/asx-holidays/2028/): Australian Securities Exchange (ASX) market holidays 2028: 8 weekday closures, 252 trading days, regular hours and whether NYSE is open the same day.
+
+## Bond market holidays 2026-2028: SIFMA closures and early closes
+
+- [Bond market holidays 2026-2028: SIFMA closures and early closes](https://plainfoldhq.github.io/bond-market-holidays/): Bond market holidays 2026-2028 at a glance: SIFMA closures and early closes by holiday, with links to each year.
+- [Bond market holidays 2026: SIFMA closures and early closes](https://plainfoldhq.github.io/bond-market-holidays/2026/): US bond market holidays 2026 (SIFMA recommended): 11 full closures, 6 early closes with close times, including Columbus Day, Veterans Day and Good Friday.
+- [Bond market holidays 2027: SIFMA closures and early closes](https://plainfoldhq.github.io/bond-market-holidays/2027/): US bond market holidays 2027 (SIFMA recommended): 12 full closures, 6 early closes with close times, including Columbus Day, Veterans Day and Good Friday.
+- [Bond market holidays 2028: SIFMA closures and early closes](https://plainfoldhq.github.io/bond-market-holidays/2028/): US bond market holidays 2028 (SIFMA recommended): 10 full closures, 6 early closes with close times, including Columbus Day, Veterans Day and Good Friday.
+
+## Business days per month by year (US federal, NYSE, Fed)
+
+- [Business days per month by year (US federal, NYSE, Fed)](https://plainfoldhq.github.io/business-days/): Business days per year 2025-2031 under the US federal, NYSE and Federal Reserve calendars, with month-by-month counts for each year.
+- [Business days in 2025: working days per month (US federal, NYSE, Fed)](https://plainfoldhq.github.io/business-days/2025/): Number of business days in each month of 2025: 250 federal business days, 250 NYSE trading days and 250 Federal Reserve business days in the year.
+- [Business days in 2026: working days per month (US federal, NYSE, Fed)](https://plainfoldhq.github.io/business-days/2026/): Number of business days in each month of 2026: 250 federal business days, 251 NYSE trading days and 251 Federal Reserve business days in the year.
+- [Business days in 2027: working days per month (US federal, NYSE, Fed)](https://plainfoldhq.github.io/business-days/2027/): Number of business days in each month of 2027: 249 federal business days, 251 NYSE trading days and 252 Federal Reserve business days in the year.
+- [Business days in 2028: working days per month (US federal, NYSE, Fed)](https://plainfoldhq.github.io/business-days/2028/): Number of business days in each month of 2028: 250 federal business days, 251 NYSE trading days and 251 Federal Reserve business days in the year.
+- [Business days in 2029: working days per month (US federal, NYSE, Fed)](https://plainfoldhq.github.io/business-days/2029/): Number of business days in each month of 2029: 250 federal business days, 251 NYSE trading days and 250 Federal Reserve business days in the year.
+- [Business days in 2030: working days per month (US federal, NYSE, Fed)](https://plainfoldhq.github.io/business-days/2030/): Number of business days in each month of 2030: 250 federal business days, 251 NYSE trading days and 250 Federal Reserve business days in the year.
+- [Business days in 2031: working days per month (US federal, NYSE, Fed)](https://plainfoldhq.github.io/business-days/2031/): Number of business days in each month of 2031: 250 federal business days, 251 NYSE trading days and 250 Federal Reserve business days in the year.
+
+## Daylight saving time dates by year
+
+- [Daylight saving time dates by year](https://plainfoldhq.github.io/dst-dates/): Daylight saving time dates 2026, 2027 and 2028 for the US and the EU/UK in one table, plus clock changes for every country by year (2025-2031).
+- [Daylight saving time 2025: clock change dates by country](https://plainfoldhq.github.io/dst-dates/2025/): DST 2025 start and end dates in local time for 29 time zones (US, Canada, EU, UK, Australia, New Zealand, Chile, Mexico border, and more), plus 36 countries with no clock changes.
+- [Daylight saving time 2026: clock change dates by country](https://plainfoldhq.github.io/dst-dates/2026/): DST 2026 start and end dates in local time for 29 time zones (US, Canada, EU, UK, Australia, New Zealand, Chile, Mexico border, and more), plus 36 countries with no clock changes.
+- [Daylight saving time 2027: clock change dates by country](https://plainfoldhq.github.io/dst-dates/2027/): DST 2027 start and end dates in local time for 27 time zones (US, Canada, EU, UK, Australia, New Zealand, Chile, Mexico border, and more), plus 38 countries with no clock changes.
+- [Daylight saving time 2028: clock change dates by country](https://plainfoldhq.github.io/dst-dates/2028/): DST 2028 start and end dates in local time for 27 time zones (US, Canada, EU, UK, Australia, New Zealand, Chile, Mexico border, and more), plus 38 countries with no clock changes.
+- [Daylight saving time 2029: clock change dates by country](https://plainfoldhq.github.io/dst-dates/2029/): DST 2029 start and end dates in local time for 27 time zones (US, Canada, EU, UK, Australia, New Zealand, Chile, Mexico border, and more), plus 38 countries with no clock changes.
+- [Daylight saving time 2030: clock change dates by country](https://plainfoldhq.github.io/dst-dates/2030/): DST 2030 start and end dates in local time for 27 time zones (US, Canada, EU, UK, Australia, New Zealand, Chile, Mexico border, and more), plus 38 countries with no clock changes.
+- [Daylight saving time 2031: clock change dates by country](https://plainfoldhq.github.io/dst-dates/2031/): DST 2031 start and end dates in local time for 27 time zones (US, Canada, EU, UK, Australia, New Zealand, Chile, Mexico border, and more), plus 38 countries with no clock changes.
+
+## Euronext holidays: Euronext (Paris, Amsterdam, Brussels) closures and trading hours
+
+- [Euronext holidays 2026: Euronext (Paris, Amsterdam, Brussels) closures and trading hours](https://plainfoldhq.github.io/euronext-holidays/2026/): Euronext (Paris, Amsterdam, Brussels) market holidays 2026: 5 weekday closures, 2 early closes, 256 trading days, regular hours and whether NYSE is open the same day.
+- [Euronext holidays 2027: Euronext (Paris, Amsterdam, Brussels) closures and trading hours](https://plainfoldhq.github.io/euronext-holidays/2027/): Euronext (Paris, Amsterdam, Brussels) market holidays 2027: 3 weekday closures, 2 early closes, 258 trading days, regular hours and whether NYSE is open the same day.
+- [Euronext holidays 2028: Euronext (Paris, Amsterdam, Brussels) closures and trading hours](https://plainfoldhq.github.io/euronext-holidays/2028/): Euronext (Paris, Amsterdam, Brussels) market holidays 2028: 5 weekday closures, 255 trading days, regular hours and whether NYSE is open the same day.
+
+## Holiday lists for Excel NETWORKDAYS and WORKDAY (free xlsx and CSV, 2026-2028)
+
+- [Holiday lists for Excel NETWORKDAYS and WORKDAY (free xlsx and CSV, 2026-2028)](https://plainfoldhq.github.io/excel-holiday-lists/): Free holiday lists for Excel NETWORKDAYS, WORKDAY and Google Sheets: US federal, Federal Reserve, NYSE, UK and euro T2, 2026-2028, as xlsx with a named range Holidays and as CSV, with copy-paste formulas.
+- [Euro T2 (TARGET2) holidays for Excel NETWORKDAYS and WORKDAY (xlsx and CSV, 2026-2028)](https://plainfoldhq.github.io/excel-holiday-lists/euro-t2/): Euro (T2) holiday list 2026-2028 to use as the holiday range in Excel NETWORKDAYS and WORKDAY or in Google Sheets: dates, formulas, business days per month and free xlsx and CSV downloads.
+- [US bank (Federal Reserve) holidays for Excel NETWORKDAYS and WORKDAY (xlsx and CSV, 2026-2028)](https://plainfoldhq.github.io/excel-holiday-lists/federal-reserve/): US banks (Federal Reserve) holiday list 2026-2028 to use as the holiday range in Excel NETWORKDAYS and WORKDAY or in Google Sheets: dates, formulas, business days per month and free xlsx and CSV downloads.
+- [NYSE market holidays for Excel NETWORKDAYS and WORKDAY (xlsx and CSV, 2026-2028)](https://plainfoldhq.github.io/excel-holiday-lists/nyse/): NYSE holiday list 2026-2028 to use as the holiday range in Excel NETWORKDAYS and WORKDAY or in Google Sheets: dates, formulas, business days per month and free xlsx and CSV downloads.
+- [UK bank holidays, England and Wales for Excel NETWORKDAYS and WORKDAY (xlsx and CSV, 2026-2028)](https://plainfoldhq.github.io/excel-holiday-lists/uk-england-wales/): UK (England and Wales) holiday list 2026-2028 to use as the holiday range in Excel NETWORKDAYS and WORKDAY or in Google Sheets: dates, formulas, business days per month and free xlsx and CSV downloads.
+- [US federal holidays for Excel NETWORKDAYS and WORKDAY (xlsx and CSV, 2026-2028)](https://plainfoldhq.github.io/excel-holiday-lists/us-federal/): US federal holiday list 2026-2028 to use as the holiday range in Excel NETWORKDAYS and WORKDAY or in Google Sheets: dates, formulas, business days per month and free xlsx and CSV downloads.
+
+## Federal Reserve bank holidays by year
+
+- [Federal Reserve bank holidays by year](https://plainfoldhq.github.io/federal-reserve-holidays/): Federal Reserve Bank holidays (no Fedwire or FedACH) for 2026, 2027 and 2028 in one table, why Saturday holidays are not moved, and every year 2025-2031.
+- [Federal Reserve holidays 2025: bank holiday schedule](https://plainfoldhq.github.io/federal-reserve-holidays/2025/): Federal Reserve Bank holidays 2025: 11 weekday closures, and why Saturday holidays are not moved to Friday.
+- [Federal Reserve holidays 2026: bank holiday schedule](https://plainfoldhq.github.io/federal-reserve-holidays/2026/): Federal Reserve Bank holidays 2026: 10 weekday closures, and why Saturday holidays are not moved to Friday.
+- [Federal Reserve holidays 2027: bank holiday schedule](https://plainfoldhq.github.io/federal-reserve-holidays/2027/): Federal Reserve Bank holidays 2027: 9 weekday closures, and why Saturday holidays are not moved to Friday.
+- [Federal Reserve holidays 2028: bank holiday schedule](https://plainfoldhq.github.io/federal-reserve-holidays/2028/): Federal Reserve Bank holidays 2028: 9 weekday closures, and why Saturday holidays are not moved to Friday.
+- [Federal Reserve holidays 2029: bank holiday schedule](https://plainfoldhq.github.io/federal-reserve-holidays/2029/): Federal Reserve Bank holidays 2029: 11 weekday closures, and why Saturday holidays are not moved to Friday.
+- [Federal Reserve holidays 2030: bank holiday schedule](https://plainfoldhq.github.io/federal-reserve-holidays/2030/): Federal Reserve Bank holidays 2030: 11 weekday closures, and why Saturday holidays are not moved to Friday.
+- [Federal Reserve holidays 2031: bank holiday schedule](https://plainfoldhq.github.io/federal-reserve-holidays/2031/): Federal Reserve Bank holidays 2031: 11 weekday closures, and why Saturday holidays are not moved to Friday.
+
+## FX settlement holidays 2026-2028: USD, EUR (TARGET2), GBP, JPY, AUD, NZD
+
+- [FX settlement holidays 2026-2028: USD, EUR (TARGET2), GBP, JPY, AUD, NZD](https://plainfoldhq.github.io/fx-settlement-holidays/): Settlement holiday calendars for six major currencies and FX spot value dates, 2026-2028, with a free CSV.
+- [FX settlement holidays 2026: USD, EUR (TARGET2), GBP, JPY, AUD, NZD](https://plainfoldhq.github.io/fx-settlement-holidays/2026/): Currency settlement holidays in 2026 for USD, EUR (TARGET2), GBP, JPY, AUD and NZD, and the FX spot value dates they push back for EURUSD, USDJPY, GBPUSD and EURGBP.
+- [FX settlement holidays 2027: USD, EUR (TARGET2), GBP, JPY, AUD, NZD](https://plainfoldhq.github.io/fx-settlement-holidays/2027/): Currency settlement holidays in 2027 for USD, EUR (TARGET2), GBP, JPY, AUD and NZD, and the FX spot value dates they push back for EURUSD, USDJPY, GBPUSD and EURGBP.
+- [FX settlement holidays 2028: USD, EUR (TARGET2), GBP, JPY, AUD, NZD](https://plainfoldhq.github.io/fx-settlement-holidays/2028/): Currency settlement holidays in 2028 for USD, EUR (TARGET2), GBP, JPY, AUD and NZD, and the FX spot value dates they push back for EURUSD, USDJPY, GBPUSD and EURGBP.
+
+## HKEX holidays: Hong Kong Stock Exchange (HKEX) closures and trading hours
+
+- [HKEX holidays 2026: Hong Kong Stock Exchange (HKEX) closures and trading hours](https://plainfoldhq.github.io/hkex-holidays/2026/): Hong Kong Stock Exchange (HKEX) market holidays 2026: 14 weekday closures, 3 early closes, 247 trading days, regular hours and whether NYSE is open the same day.
+- [HKEX holidays 2027: Hong Kong Stock Exchange (HKEX) closures and trading hours](https://plainfoldhq.github.io/hkex-holidays/2027/): Hong Kong Stock Exchange (HKEX) market holidays 2027: 13 weekday closures, 3 early closes, 248 trading days, regular hours and whether NYSE is open the same day.
+- [HKEX holidays 2028: Hong Kong Stock Exchange (HKEX) closures and trading hours](https://plainfoldhq.github.io/hkex-holidays/2028/): Hong Kong Stock Exchange (HKEX) market holidays 2028: 14 weekday closures, 1 early close, 246 trading days, regular hours and whether NYSE is open the same day.
+
+## Last business day of each month 2026 (US banks, NYSE, euro T2, England)
+
+- [Last business day of each month 2026 (US banks, NYSE, euro T2, England)](https://plainfoldhq.github.io/last-business-day-of-month/2026/): The last and first business day of every month in 2026 for the Federal Reserve (US banks), NYSE, euro T2 (TARGET2) and England and Wales bank holidays.
+- [Last business day of each month 2027 (US banks, NYSE, euro T2, England)](https://plainfoldhq.github.io/last-business-day-of-month/2027/): The last and first business day of every month in 2027 for the Federal Reserve (US banks), NYSE, euro T2 (TARGET2) and England and Wales bank holidays.
+- [Last business day of each month 2028 (US banks, NYSE, euro T2, England)](https://plainfoldhq.github.io/last-business-day-of-month/2028/): The last and first business day of every month in 2028 for the Federal Reserve (US banks), NYSE, euro T2 (TARGET2) and England and Wales bank holidays.
+
+## LSE holidays: London Stock Exchange (LSE) closures and trading hours
+
+- [LSE holidays 2026: London Stock Exchange (LSE) closures and trading hours](https://plainfoldhq.github.io/london-stock-exchange-holidays/2026/): London Stock Exchange (LSE) market holidays 2026: 8 weekday closures, 2 early closes, 253 trading days, regular hours and whether NYSE is open the same day.
+- [LSE holidays 2027: London Stock Exchange (LSE) closures and trading hours](https://plainfoldhq.github.io/london-stock-exchange-holidays/2027/): London Stock Exchange (LSE) market holidays 2027: 8 weekday closures, 2 early closes, 253 trading days, regular hours and whether NYSE is open the same day.
+- [LSE holidays 2028: London Stock Exchange (LSE) closures and trading hours](https://plainfoldhq.github.io/london-stock-exchange-holidays/2028/): London Stock Exchange (LSE) market holidays 2028: 8 weekday closures, 2 early closes, 252 trading days, regular hours and whether NYSE is open the same day.
+
+## NYSE holidays by year: market closures and early closes
+
+- [NYSE holidays by year: market closures and early closes](https://plainfoldhq.github.io/nyse-holidays/): NYSE stock market holidays and 1:00 p.m. early closes for 2026, 2027 and 2028 in one table, plus every year 2025-2031.
+- [NYSE holidays 2025: stock market closures and early closes](https://plainfoldhq.github.io/nyse-holidays/2025/): NYSE market holidays 2025: 11 closures and 3 1:00 p.m. early closes, with dates and weekdays. Free CSV and Python business-day package.
+- [NYSE holidays 2026: stock market closures and early closes](https://plainfoldhq.github.io/nyse-holidays/2026/): NYSE market holidays 2026: 10 closures and 2 1:00 p.m. early closes, with dates and weekdays. Free CSV and Python business-day package.
+- [NYSE holidays 2027: stock market closures and early closes](https://plainfoldhq.github.io/nyse-holidays/2027/): NYSE market holidays 2027: 10 closures and 1 1:00 p.m. early closes, with dates and weekdays. Free CSV and Python business-day package.
+- [NYSE holidays 2028: stock market closures and early closes](https://plainfoldhq.github.io/nyse-holidays/2028/): NYSE market holidays 2028: 9 closures and 2 1:00 p.m. early closes, with dates and weekdays. Free CSV and Python business-day package.
+- [NYSE holidays 2029: stock market closures and early closes](https://plainfoldhq.github.io/nyse-holidays/2029/): NYSE market holidays 2029: 10 closures and 3 1:00 p.m. early closes, with dates and weekdays. Free CSV and Python business-day package.
+- [NYSE holidays 2030: stock market closures and early closes](https://plainfoldhq.github.io/nyse-holidays/2030/): NYSE market holidays 2030: 10 closures and 3 1:00 p.m. early closes, with dates and weekdays. Free CSV and Python business-day package.
+- [NYSE holidays 2031: stock market closures and early closes](https://plainfoldhq.github.io/nyse-holidays/2031/): NYSE market holidays 2031: 10 closures and 3 1:00 p.m. early closes, with dates and weekdays. Free CSV and Python business-day package.
+
+## Options expiration dates 2000-2050: monthly opex, quad witching, VIX, IMM
+
+- [Options expiration dates 2000-2050: monthly opex, quad witching, VIX, IMM](https://plainfoldhq.github.io/options-expiration-dates/): US options expiration calendar: third-Friday expirations moved for NYSE holidays, quad witching, VIX settlement and IMM dates, with a free CSV for 2000-2050.
+- [Options expiration dates 2026: monthly opex, quad witching, VIX settlement](https://plainfoldhq.github.io/options-expiration-dates/2026/): Every monthly options expiration date in 2026 (third Friday, moved for NYSE holidays), the four quad witching days, VIX settlement dates and IMM dates.
+- [Options expiration dates 2027: monthly opex, quad witching, VIX settlement](https://plainfoldhq.github.io/options-expiration-dates/2027/): Every monthly options expiration date in 2027 (third Friday, moved for NYSE holidays), the four quad witching days, VIX settlement dates and IMM dates.
+- [Options expiration dates 2028: monthly opex, quad witching, VIX settlement](https://plainfoldhq.github.io/options-expiration-dates/2028/): Every monthly options expiration date in 2028 (third Friday, moved for NYSE holidays), the four quad witching days, VIX settlement dates and IMM dates.
+
+## US payroll calendars 2026-2028: biweekly, semi-monthly and monthly pay dates
+
+- [US payroll calendars 2026-2028: biweekly, semi-monthly and monthly pay dates](https://plainfoldhq.github.io/payroll-calendar/): Payroll pay dates by year for US biweekly, weekly, semi-monthly and monthly schedules, adjusted for bank holidays, with a free CSV.
+- [2026 payroll calendar: biweekly, semi-monthly and monthly pay dates](https://plainfoldhq.github.io/payroll-calendar/2026/): 2026 US payroll calendar: biweekly Friday paydays (both series), semi-monthly and monthly pay dates moved for weekends and bank holidays, and the 2026 Federal Reserve holidays.
+- [2027 payroll calendar: biweekly, semi-monthly and monthly pay dates](https://plainfoldhq.github.io/payroll-calendar/2027/): 2027 US payroll calendar: biweekly Friday paydays (both series), semi-monthly and monthly pay dates moved for weekends and bank holidays, and the 2027 Federal Reserve holidays.
+- [2028 payroll calendar: biweekly, semi-monthly and monthly pay dates](https://plainfoldhq.github.io/payroll-calendar/2028/): 2028 US payroll calendar: biweekly Friday paydays (both series), semi-monthly and monthly pay dates moved for weekends and bank holidays, and the 2028 Federal Reserve holidays.
+
+## Public holidays 2026-2028 by country (26 countries)
+
+- [Public holidays 2026-2028 by country (26 countries)](https://plainfoldhq.github.io/public-holidays/): Public holidays 2026, 2027 and 2028 for 26 countries and regions: UK, Canada, Australia, Germany, France, Japan, Brazil, Mexico, Spain, Italy and more, with days in lieu and a free CSV.
+- [Australia (New South Wales) public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/australia-new-south-wales/): Public holidays in Australia (New South Wales) 2026-2028 with dates, weekdays, local names and days in lieu: 9 working-day holidays in 2026, 9 in 2027, 9 in 2028.
+- [Austria public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/austria/): Public holidays in Austria 2026-2028 with dates, weekdays, local names and days in lieu: 10 working-day holidays in 2026, 9 in 2027, 12 in 2028.
+- [Belgium public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/belgium/): Public holidays in Belgium 2026-2028 with dates, weekdays, local names and days in lieu: 8 working-day holidays in 2026, 7 in 2027, 8 in 2028.
+- [Brazil public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/brazil/): Public holidays in Brazil 2026-2028 with dates, weekdays, local names and days in lieu: 9 working-day holidays in 2026, 7 in 2027, 9 in 2028.
+- [Canada public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/canada/): Public holidays in Canada 2026-2028 with dates, weekdays, local names and days in lieu: 5 working-day holidays in 2026, 5 in 2027, 4 in 2028.
+- [Chile public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/chile/): Public holidays in Chile 2026-2028 with dates, weekdays, local names and days in lieu: 10 working-day holidays in 2026, 10 in 2027, 12 in 2028.
+- [Colombia public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/colombia/): Public holidays in Colombia 2026-2028 with dates, weekdays, local names and days in lieu: 19 working-day holidays in 2026, 16 in 2027, 18 in 2028.
+- [Czechia public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/czechia/): Public holidays in Czechia 2026-2028 with dates, weekdays, local names and days in lieu: 11 working-day holidays in 2026, 9 in 2027, 10 in 2028.
+- [Denmark public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/denmark/): Public holidays in Denmark 2026-2028 with dates, weekdays, local names and days in lieu: 7 working-day holidays in 2026, 6 in 2027, 7 in 2028.
+- [Finland public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/finland/): Public holidays in Finland 2026-2028 with dates, weekdays, local names and days in lieu: 9 working-day holidays in 2026, 8 in 2027, 9 in 2028.
+- [France public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/france/): Public holidays in France 2026-2028 with dates, weekdays, local names and days in lieu: 9 working-day holidays in 2026, 7 in 2027, 9 in 2028.
+- [Germany public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/germany/): Public holidays in Germany 2026-2028 with dates, weekdays, local names and days in lieu: 7 working-day holidays in 2026, 5 in 2027, 8 in 2028.
+- [Ireland public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/ireland/): Public holidays in Ireland 2026-2028 with dates, weekdays, local names and days in lieu: 9 working-day holidays in 2026, 8 in 2027, 9 in 2028.
+- [Italy public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/italy/): Public holidays in Italy 2026-2028 with dates, weekdays, local names and days in lieu: 7 working-day holidays in 2026, 7 in 2027, 11 in 2028.
+- [Japan public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/japan/): Public holidays in Japan 2026-2028 with dates, weekdays, local names and days in lieu: 17 working-day holidays in 2026, 16 in 2027, 14 in 2028.
+- [Mexico public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/mexico/): Public holidays in Mexico 2026-2028 with dates, weekdays, local names and days in lieu: 7 working-day holidays in 2026, 5 in 2027, 5 in 2028.
+- [New Zealand public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/new-zealand/): Public holidays in New Zealand 2026-2028 with dates, weekdays, local names and days in lieu: 11 working-day holidays in 2026, 11 in 2027, 11 in 2028.
+- [Norway public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/norway/): Public holidays in Norway 2026-2028 with dates, weekdays, local names and days in lieu: 8 working-day holidays in 2026, 6 in 2027, 9 in 2028.
+- [Poland public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/poland/): Public holidays in Poland 2026-2028 with dates, weekdays, local names and days in lieu: 8 working-day holidays in 2026, 8 in 2027, 9 in 2028.
+- [Portugal public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/portugal/): Public holidays in Portugal 2026-2028 with dates, weekdays, local names and days in lieu: 9 working-day holidays in 2026, 8 in 2027, 10 in 2028.
+- [Singapore public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/singapore/): Public holidays in Singapore 2026-2028 with dates, weekdays, local names and days in lieu: 10 working-day holidays in 2026, 8 in 2027, 10 in 2028.
+- [Spain public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/spain/): Public holidays in Spain 2026-2028 with dates, weekdays, local names and days in lieu: 7 working-day holidays in 2026, 7 in 2027, 9 in 2028.
+- [Sweden public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/sweden/): Public holidays in Sweden 2026-2028 with dates, weekdays, local names and days in lieu: 7 working-day holidays in 2026, 5 in 2027, 8 in 2028.
+- [Switzerland (Zürich) public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/switzerland-zurich/): Public holidays in Switzerland (Zürich) 2026-2028 with dates, weekdays, local names and days in lieu: 7 working-day holidays in 2026, 5 in 2027, 8 in 2028.
+- [United Kingdom (England) public holidays and working days 2026, 2027, 2028](https://plainfoldhq.github.io/public-holidays/united-kingdom-england/): Public holidays in United Kingdom (England) 2026-2028 with dates, weekdays, local names and days in lieu: 8 working-day holidays in 2026, 8 in 2027, 8 in 2028.
+
+## 4-5-4 retail calendar by fiscal year
+
+- [4-5-4 retail calendar by fiscal year](https://plainfoldhq.github.io/retail-calendar-4-5-4/): NRF-style 4-5-4 retail calendar: start and end of every fiscal year 2025-2031 with 52 or 53 weeks, and the periods and weeks of each year.
+- [4-5-4 retail calendar 2025: NRF fiscal 2025 periods and weeks](https://plainfoldhq.github.io/retail-calendar-4-5-4/2025/): NRF-style 4-5-4 retail calendar for fiscal 2025 (2025-02-02 to 2026-01-31, 52 weeks): start and end dates of every period.
+- [4-5-4 retail calendar 2026: NRF fiscal 2026 periods and weeks](https://plainfoldhq.github.io/retail-calendar-4-5-4/2026/): NRF-style 4-5-4 retail calendar for fiscal 2026 (2026-02-01 to 2027-01-30, 52 weeks): start and end dates of every period.
+- [4-5-4 retail calendar 2027: NRF fiscal 2027 periods and weeks](https://plainfoldhq.github.io/retail-calendar-4-5-4/2027/): NRF-style 4-5-4 retail calendar for fiscal 2027 (2027-01-31 to 2028-01-29, 52 weeks): start and end dates of every period.
+- [4-5-4 retail calendar 2028: NRF fiscal 2028 periods and weeks](https://plainfoldhq.github.io/retail-calendar-4-5-4/2028/): NRF-style 4-5-4 retail calendar for fiscal 2028 (2028-01-30 to 2029-02-03, 53 weeks): start and end dates of every period.
+- [4-5-4 retail calendar 2029: NRF fiscal 2029 periods and weeks](https://plainfoldhq.github.io/retail-calendar-4-5-4/2029/): NRF-style 4-5-4 retail calendar for fiscal 2029 (2029-02-04 to 2030-02-02, 52 weeks): start and end dates of every period.
+- [4-5-4 retail calendar 2030: NRF fiscal 2030 periods and weeks](https://plainfoldhq.github.io/retail-calendar-4-5-4/2030/): NRF-style 4-5-4 retail calendar for fiscal 2030 (2030-02-03 to 2031-02-01, 52 weeks): start and end dates of every period.
+- [4-5-4 retail calendar 2031: NRF fiscal 2031 periods and weeks](https://plainfoldhq.github.io/retail-calendar-4-5-4/2031/): NRF-style 4-5-4 retail calendar for fiscal 2031 (2031-02-02 to 2032-01-31, 52 weeks): start and end dates of every period.
+
+## SIX holidays: SIX Swiss Exchange closures and trading hours
+
+- [SIX holidays 2026: SIX Swiss Exchange closures and trading hours](https://plainfoldhq.github.io/six-swiss-exchange-holidays/2026/): SIX Swiss Exchange market holidays 2026: 10 weekday closures, 251 trading days, regular hours and whether NYSE is open the same day.
+- [SIX holidays 2027: SIX Swiss Exchange closures and trading hours](https://plainfoldhq.github.io/six-swiss-exchange-holidays/2027/): SIX Swiss Exchange market holidays 2027: 7 weekday closures, 254 trading days, regular hours and whether NYSE is open the same day.
+- [SIX holidays 2028: SIX Swiss Exchange closures and trading hours](https://plainfoldhq.github.io/six-swiss-exchange-holidays/2028/): SIX Swiss Exchange market holidays 2028: 8 weekday closures, 252 trading days, regular hours and whether NYSE is open the same day.
+
+## Stock exchange holidays by year: LSE, TSX, Xetra, Euronext, Tokyo, HKEX, ASX, SIX
+
+- [Stock exchange holidays by year: LSE, TSX, Xetra, Euronext, Tokyo, HKEX, ASX, SIX](https://plainfoldhq.github.io/stock-market-holidays/): Market holidays, early closes and trading hours for major world stock exchanges, by year.
+- [Stock market holidays 2026 worldwide: NYSE, LSE, TSX, Xetra, Euronext, Tokyo, HKEX, ASX](https://plainfoldhq.github.io/stock-market-holidays/2026/): Which major stock exchanges are closed on which days in 2026: NYSE, London, Toronto, Frankfurt (Xetra), Euronext, Tokyo, Hong Kong, Sydney (ASX) and SIX Swiss, side by side.
+- [Stock market holidays 2027 worldwide: NYSE, LSE, TSX, Xetra, Euronext, Tokyo, HKEX, ASX](https://plainfoldhq.github.io/stock-market-holidays/2027/): Which major stock exchanges are closed on which days in 2027: NYSE, London, Toronto, Frankfurt (Xetra), Euronext, Tokyo, Hong Kong, Sydney (ASX) and SIX Swiss, side by side.
+- [Stock market holidays 2028 worldwide: NYSE, LSE, TSX, Xetra, Euronext, Tokyo, HKEX, ASX](https://plainfoldhq.github.io/stock-market-holidays/2028/): Which major stock exchanges are closed on which days in 2028: NYSE, London, Toronto, Frankfurt (Xetra), Euronext, Tokyo, Hong Kong, Sydney (ASX) and SIX Swiss, side by side.
+
+## Tokyo holidays: Tokyo Stock Exchange (JPX) closures and trading hours
+
+- [Tokyo holidays 2026: Tokyo Stock Exchange (JPX) closures and trading hours](https://plainfoldhq.github.io/tokyo-stock-exchange-holidays/2026/): Tokyo Stock Exchange (JPX) market holidays 2026: 19 weekday closures, 242 trading days, regular hours and whether NYSE is open the same day.
+- [Tokyo holidays 2027: Tokyo Stock Exchange (JPX) closures and trading hours](https://plainfoldhq.github.io/tokyo-stock-exchange-holidays/2027/): Tokyo Stock Exchange (JPX) market holidays 2027: 17 weekday closures, 244 trading days, regular hours and whether NYSE is open the same day.
+- [Tokyo holidays 2028: Tokyo Stock Exchange (JPX) closures and trading hours](https://plainfoldhq.github.io/tokyo-stock-exchange-holidays/2028/): Tokyo Stock Exchange (JPX) market holidays 2028: 15 weekday closures, 245 trading days, regular hours and whether NYSE is open the same day.
+
+## TSX holidays: Toronto Stock Exchange (TSX) closures and trading hours
+
+- [TSX holidays 2026: Toronto Stock Exchange (TSX) closures and trading hours](https://plainfoldhq.github.io/tsx-holidays/2026/): Toronto Stock Exchange (TSX) market holidays 2026: 10 weekday closures, 1 early close, 251 trading days, regular hours and whether NYSE is open the same day.
+- [TSX holidays 2027: Toronto Stock Exchange (TSX) closures and trading hours](https://plainfoldhq.github.io/tsx-holidays/2027/): Toronto Stock Exchange (TSX) market holidays 2027: 10 weekday closures, 1 early close, 251 trading days, regular hours and whether NYSE is open the same day.
+- [TSX holidays 2028: Toronto Stock Exchange (TSX) closures and trading hours](https://plainfoldhq.github.io/tsx-holidays/2028/): Toronto Stock Exchange (TSX) market holidays 2028: 10 weekday closures, 250 trading days, regular hours and whether NYSE is open the same day.
+
+## US federal holidays by year
+
+- [US federal holidays by year](https://plainfoldhq.github.io/us-federal-holidays/): US federal holiday dates and the observed day off for 2026, 2027 and 2028 in one table, plus every year 2025-2031. Free CSV and Python package.
+- [US federal holidays 2025: dates and observed days off](https://plainfoldhq.github.io/us-federal-holidays/2025/): The 11 US federal holiday days off in 2025 with their observed dates (Saturday holidays move to Friday, Sunday holidays to Monday). Free CSV and Python package.
+- [US federal holidays 2026: dates and observed days off](https://plainfoldhq.github.io/us-federal-holidays/2026/): The 11 US federal holiday days off in 2026 with their observed dates (Saturday holidays move to Friday, Sunday holidays to Monday). Free CSV and Python package.
+- [US federal holidays 2027: dates and observed days off](https://plainfoldhq.github.io/us-federal-holidays/2027/): The 12 US federal holiday days off in 2027 with their observed dates (Saturday holidays move to Friday, Sunday holidays to Monday). Free CSV and Python package.
+- [US federal holidays 2028: dates and observed days off](https://plainfoldhq.github.io/us-federal-holidays/2028/): The 10 US federal holiday days off in 2028 with their observed dates (Saturday holidays move to Friday, Sunday holidays to Monday). Free CSV and Python package.
+- [US federal holidays 2029: dates and observed days off](https://plainfoldhq.github.io/us-federal-holidays/2029/): The 11 US federal holiday days off in 2029 with their observed dates (Saturday holidays move to Friday, Sunday holidays to Monday). Free CSV and Python package.
+- [US federal holidays 2030: dates and observed days off](https://plainfoldhq.github.io/us-federal-holidays/2030/): The 11 US federal holiday days off in 2030 with their observed dates (Saturday holidays move to Friday, Sunday holidays to Monday). Free CSV and Python package.
+- [US federal holidays 2031: dates and observed days off](https://plainfoldhq.github.io/us-federal-holidays/2031/): The 11 US federal holiday days off in 2031 with their observed dates (Saturday holidays move to Friday, Sunday holidays to Monday). Free CSV and Python package.
+
+## ISO week numbers by year
+
+- [ISO week numbers by year](https://plainfoldhq.github.io/week-numbers/): ISO 8601 week numbers by year: which years have 53 weeks, when week 1 starts and the last week ends (2025-2031), and every week's dates.
+- [Week numbers 2025: ISO 8601 calendar weeks with dates](https://plainfoldhq.github.io/week-numbers/2025/): ISO week numbers for 2025: all 52 weeks with Monday start and Sunday end dates, plus how to get the ISO week in Python, SQL and Excel.
+- [Week numbers 2026: ISO 8601 calendar weeks with dates](https://plainfoldhq.github.io/week-numbers/2026/): ISO week numbers for 2026: all 53 weeks with Monday start and Sunday end dates, plus how to get the ISO week in Python, SQL and Excel.
+- [Week numbers 2027: ISO 8601 calendar weeks with dates](https://plainfoldhq.github.io/week-numbers/2027/): ISO week numbers for 2027: all 52 weeks with Monday start and Sunday end dates, plus how to get the ISO week in Python, SQL and Excel.
+- [Week numbers 2028: ISO 8601 calendar weeks with dates](https://plainfoldhq.github.io/week-numbers/2028/): ISO week numbers for 2028: all 52 weeks with Monday start and Sunday end dates, plus how to get the ISO week in Python, SQL and Excel.
+- [Week numbers 2029: ISO 8601 calendar weeks with dates](https://plainfoldhq.github.io/week-numbers/2029/): ISO week numbers for 2029: all 52 weeks with Monday start and Sunday end dates, plus how to get the ISO week in Python, SQL and Excel.
+- [Week numbers 2030: ISO 8601 calendar weeks with dates](https://plainfoldhq.github.io/week-numbers/2030/): ISO week numbers for 2030: all 52 weeks with Monday start and Sunday end dates, plus how to get the ISO week in Python, SQL and Excel.
+- [Week numbers 2031: ISO 8601 calendar weeks with dates](https://plainfoldhq.github.io/week-numbers/2031/): ISO week numbers for 2031: all 52 weeks with Monday start and Sunday end dates, plus how to get the ISO week in Python, SQL and Excel.
+
+## Xetra holidays: Xetra / Frankfurt Stock Exchange closures and trading hours
+
+- [Xetra holidays 2026: Xetra / Frankfurt Stock Exchange closures and trading hours](https://plainfoldhq.github.io/xetra-holidays/2026/): Xetra / Frankfurt Stock Exchange market holidays 2026: 7 weekday closures, 1 early close, 254 trading days, regular hours and whether NYSE is open the same day.
+- [Xetra holidays 2027: Xetra / Frankfurt Stock Exchange closures and trading hours](https://plainfoldhq.github.io/xetra-holidays/2027/): Xetra / Frankfurt Stock Exchange market holidays 2027: 5 weekday closures, 1 early close, 256 trading days, regular hours and whether NYSE is open the same day.
+- [Xetra holidays 2028: Xetra / Frankfurt Stock Exchange closures and trading hours](https://plainfoldhq.github.io/xetra-holidays/2028/): Xetra / Frankfurt Stock Exchange market holidays 2028: 5 weekday closures, 1 early close, 255 trading days, regular hours and whether NYSE is open the same day.
+
+## Free packages
+
+- [usbizdays](https://pypi.org/project/usbizdays/): Python: US federal, NYSE and Federal Reserve business days, no dependencies
+- [pandas-holiday-calendars](https://pypi.org/project/pandas-holiday-calendars/): pandas AbstractHolidayCalendar classes: NYSE, Fed, US federal 2000-2050
+- [exchange-trading-days](https://pypi.org/project/exchange-trading-days/): Python: 9 stock exchanges' trading days and early closes, 2026-2028
+- [fx-spot-dates](https://pypi.org/project/fx-spot-dates/): Python: FX settlement holidays and T+2 spot dates for 6 currencies, 2026-2028
+- [retailcal](https://pypi.org/project/retailcal/): Python: 4-4-5 / 4-5-4 / 5-4-4 retail fiscal calendars
+- [dst-test-vectors](https://pypi.org/project/dst-test-vectors/): Python: DST gap/overlap test vectors from IANA tzdata
+- [plainfold-calendars-mcp](https://pypi.org/project/plainfold-calendars-mcp/): MCP server: business days, market holidays and FX spot dates for AI assistants
+- [go-holiday-calendars](https://github.com/plainfoldhq/go-holiday-calendars): Go module: NYSE, Fed, US federal holidays 2000-2050
+- [dbt-business-days](https://github.com/plainfoldhq/dbt-business-days): dbt package: holiday calendars and business-day macros
