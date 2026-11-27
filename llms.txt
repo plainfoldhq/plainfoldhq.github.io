@@ -237,3 +237,4 @@ Free JSON and .ics data: https://plainfoldhq.github.io/holidays-api/ . Built 202
 - [plainfold-calendars-mcp](https://pypi.org/project/plainfold-calendars-mcp/): MCP server: business days, market holidays and FX spot dates for AI assistants
 - [go-holiday-calendars](https://github.com/plainfoldhq/go-holiday-calendars): Go module: NYSE, Fed, US federal holidays 2000-2050
 - [dbt-business-days](https://github.com/plainfoldhq/dbt-business-days): dbt package: holiday calendars and business-day macros
+- [dbt-date-dimension-starter](https://github.com/plainfoldhq/dbt-date-dimension-starter): dbt template repo: dim_date with ISO weeks, NRF 4-5-4 fields, US holiday flags
